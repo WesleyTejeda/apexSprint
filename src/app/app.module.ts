@@ -4,14 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { RankedComponent } from './ranked/ranked.component';
+import { NewsComponent } from './news/news.component';
 import { MapsComponent } from './maps/maps.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ServersComponent } from './servers/servers.component';
 import { NavComponent } from './nav/nav.component';
 
 const routes: Routes =[
-  {path: "ranked", component: RankedComponent},
+  {path: "", component: NewsComponent},
   {path: "maps", component: MapsComponent},
   {path: "profiles", component: ProfilesComponent},
   {path: "servers", component: ServersComponent}
@@ -20,7 +20,7 @@ const routes: Routes =[
 @NgModule({
   declarations: [
     AppComponent,
-    RankedComponent,
+    NewsComponent,
     MapsComponent,
     ProfilesComponent,
     ServersComponent,

@@ -1,0 +1,11 @@
+<div class="row container col-lg-11 col-md-6 justify-content-center mt-3">
+    <h2>Recent Apex News</h2>
+    <div class="card mr-2 ml-2 mb-4" style="width: 18rem;" *ngFor="let listings of news" >
+        <div class="card-body mr-2 ml-2">
+            <h5 class="card-title">{{ listings.title }}</h5>
+            <img class="card-subtitle mb-2 text-muted" src="{{listings.img}}" />
+            <p class="card-text">{{ listings.short_desc }}</p>
+            <a href="{{listings.link}}" class="card-link">Read more.</a>
+        </div>
+    </div>
+</div>
