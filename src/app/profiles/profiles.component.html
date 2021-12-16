@@ -1,1 +1,41 @@
-<p>profiles works!</p>
+
+<!-- Intro -->
+<section id="intro" class="wrapper style1 fullscreen fade-up row">
+  <p style="margin-left: 50px; color: white;">Enter your Origin Username</p>
+  <input class="input" style="width: 50vh; margin-left: 50px; color: black;" [(ngModel)]="playerName" type="string"/>
+  <button (click)="getData()"></button>
+  <div class="inner row">
+    <div class="card mr-4 ml-4 p-0" style="width: 18rem;" *ngIf="isReady">
+      <h4 class="text-dark">Player Profile</h4>
+      <div class="card-body">
+        <h5 class="card-title">{{ playerData.global.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Platform: {{ playerData.global.platform }}</h6>
+        <p class="card-text font-weight-bold" [ngStyle]="levelStyle">Lv. {{ playerData.global.level }}</p>
+        <br>
+        <h6 class="card-subtitle mb-2 text-muted text-center">Battle Royale Rank: {{ playerData.global.rank.rankName }} {{playerData.global.rank.rankDiv}} <br> <img src="{{playerData.global.rank.rankImg}}" /></h6>
+        <h6 class="card-subtitle mb-2 text-muted text-center">Arenas Rank: {{ playerData.global.arena.rankName }} {{playerData.global.arena.rankDiv}} <br> <img src="{{playerData.global.arena.rankImg}}" /></h6>
+        <p *ngIf="isOnline">Online Status: 🟢 {{ playerData.realtime.currentStateAsText }}</p>
+        <p *ngIf="!(isOnline)">Online Status: 🔴 {{ playerData.realtime.currentStateAsText }}</p>
+      </div>
+  </div>
+  <div class="card col-8 p-0" style="width: 18rem;" *ngIf="isReady">
+    <h4 class="text-dark">Current Favorited Legend</h4>
+    <div class="card-body">
+      <h5 class="card-title text-dark">{{ playerData.legends.selected.LegendName }}</h5>
+      <img class="legendIcon" src="{{playerData.legends.selected.ImgAssets.icon}}" />
+    </div>
+  </div>
+  </div>
+</section>
+<!-- One -->
+<section id="one" class="wrapper style2 spotlights">
+  <section *ngFor="let legend of legends">
+      <img style="width: 50vh; height: 50vh;" src="{{ legend.ImgAssets.icon }}" />
+      <div class="content" >
+        <div class="inner">
+          <h3 class="text-center">{{ legend.name }}</h3>
+          <img style="width: 100vh; height: 40vh;" src="{{ legend.ImgAssets.banner }}" />
+        </div>
+      </div>
+  </section>
+</section>

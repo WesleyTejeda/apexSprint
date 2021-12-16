@@ -9,6 +9,7 @@ import { MapsComponent } from './maps/maps.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ServersComponent } from './servers/servers.component';
 import { NavComponent } from './nav/nav.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes =[
   {path: "", component: NewsComponent},
@@ -29,7 +30,8 @@ const routes: Routes =[
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

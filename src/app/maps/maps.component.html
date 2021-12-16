@@ -1,1 +1,14 @@
-<p>maps works!</p>
+<!-- One -->
+<section id="one" class="wrapper style2 spotlights">
+    <section *ngFor="let map of maps">
+        <img style="width: 75vh" src="{{map.info.current.asset}}" />
+        <div class="content">
+            <div class="inner">
+                <h2>{{ map.type }}</h2>
+                <p>The current map is {{ map.info.current.map }} for the next {{ map.info.current.remainingMins }} minutes.</p>
+                <h5>Up Next:</h5>
+                <p>{{ map.info.next.map }} is up next in rotation and will last for {{ map.info.next.DurationInMinutes }} minutes.</p>
+            </div>
+        </div>
+    </section>
+</section>
